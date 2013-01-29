@@ -16,5 +16,4 @@
 
 - (int)match:(NSArray *)otherCards;
 
-
 @end
