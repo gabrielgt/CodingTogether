@@ -17,12 +17,15 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *modeSelector;
+@property (strong, nonatomic) UIImage *cardBackImage;
 @end
 
 @implementation CardGameViewController
 
 - (IBAction)flipCard:(UIButton *)sender
 {
+    self.modeSelector.enabled = NO;
     [self.game flipCardAtIndex:[self.cardButtons indexOfObject:sender]];
     self.flipCount++;
     [self updateUI];
@@ -64,6 +67,16 @@
             cardButton.selected = card.isFaceUp;
             cardButton.enabled = !card.isUnplayable;
             cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
+            
+            if (!cardButton.selected)
+            {
+                [cardButton setImage:self.cardBackImage forState:UIControlStateNormal];
+            }
+            else
+            {
+                [cardButton setImage:nil forState:UIControlStateNormal];
+            }
+            
         }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 
@@ -78,7 +91,7 @@
     switch (self.game.lastAction)
     {
         case None:
-            return @"Let's start";
+            return @"Let's start again";
             break;
         case FlippedDown:
             return [NSString stringWithFormat:@"Flipped down %@",
@@ -101,6 +114,27 @@
     }
 }
 
+- (IBAction)dealCards:(UIButton *)sender
+{
+    self.game = nil;
+    self.game.gameMode = self.modeSelector.selectedSegmentIndex + 2;
+    [self updateUI];
+    self.modeSelector.enabled = YES;
+}
+
+- (IBAction)modeChanged:(UISegmentedControl *)sender
+{
+    self.game.gameMode = sender.selectedSegmentIndex + 2;
+}
+
+- (UIImage *)cardBackImage
+{
+    if (!_cardBackImage)
+    {
+        _cardBackImage = [UIImage imageNamed:@"cardback.png"];
+    }
+    return _cardBackImage;
+}
 
 
 @end

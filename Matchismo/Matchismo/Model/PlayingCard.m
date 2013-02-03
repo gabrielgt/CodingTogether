@@ -75,6 +75,14 @@
             score = 4;
         }
     }
+    else if (otherCards.count == 2)
+    {
+        PlayingCard *secondCard = [otherCards objectAtIndex:0];
+        PlayingCard *thirdCard = [otherCards objectAtIndex:1];
+        score += [self match:@[secondCard]];
+        score += [self match:@[thirdCard]];
+        score += [secondCard match:@[thirdCard]];
+    }
     
     return score;
 }

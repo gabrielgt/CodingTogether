@@ -26,6 +26,8 @@
 
 @property (nonatomic, readonly) int lastPartialScore;
 
+@property (nonatomic) int gameMode;
+
 enum ActionType
 {
     FlippedUp,

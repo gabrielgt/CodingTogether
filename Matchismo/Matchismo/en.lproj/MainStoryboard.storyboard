@@ -13,7 +13,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9T3-lo-wCY">
-                                <rect key="frame" x="20" y="20" width="64" height="82"/>
+                                <rect key="frame" x="20" y="82" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -31,14 +31,14 @@ EBDvo78
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="FbY-4M-otp">
-                                <rect key="frame" x="20" y="419" width="87" height="21"/>
+                                <rect key="frame" x="20" y="439" width="87" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iTb-d6-hBL">
-                                <rect key="frame" x="92" y="20" width="64" height="82"/>
+                                <rect key="frame" x="92" y="82" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -56,7 +56,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x7B-2r-ZDg">
-                                <rect key="frame" x="164" y="20" width="64" height="82"/>
+                                <rect key="frame" x="164" y="82" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -74,7 +74,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="d4c-cK-MtC">
-                                <rect key="frame" x="236" y="20" width="64" height="82"/>
+                                <rect key="frame" x="236" y="82" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -92,7 +92,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="qfe-oU-RIk">
-                                <rect key="frame" x="20" y="109" width="64" height="82"/>
+                                <rect key="frame" x="20" y="164" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -110,7 +110,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="yV2-CR-IdT">
-                                <rect key="frame" x="92" y="109" width="64" height="82"/>
+                                <rect key="frame" x="92" y="164" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -128,7 +128,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="B4m-QI-cqs">
-                                <rect key="frame" x="164" y="109" width="64" height="82"/>
+                                <rect key="frame" x="164" y="164" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -146,7 +146,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oJk-MU-dHS">
-                                <rect key="frame" x="236" y="109" width="64" height="82"/>
+                                <rect key="frame" x="236" y="164" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -164,7 +164,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="IsK-sq-Cxo">
-                                <rect key="frame" x="20" y="198" width="64" height="82"/>
+                                <rect key="frame" x="20" y="246" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -182,7 +182,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Qq0-ef-qha">
-                                <rect key="frame" x="92" y="198" width="64" height="82"/>
+                                <rect key="frame" x="92" y="246" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -200,7 +200,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HVo-62-oxb">
-                                <rect key="frame" x="164" y="198" width="64" height="82"/>
+                                <rect key="frame" x="164" y="246" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -218,7 +218,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="hm0-Jt-Bnt">
-                                <rect key="frame" x="236" y="198" width="64" height="82"/>
+                                <rect key="frame" x="236" y="246" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -236,7 +236,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mKV-WF-P4J">
-                                <rect key="frame" x="20" y="287" width="64" height="82"/>
+                                <rect key="frame" x="20" y="328" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -254,7 +254,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GUI-Bs-dIk">
-                                <rect key="frame" x="92" y="287" width="64" height="82"/>
+                                <rect key="frame" x="92" y="328" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -272,7 +272,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="mpc-4a-nys">
-                                <rect key="frame" x="164" y="287" width="64" height="82"/>
+                                <rect key="frame" x="164" y="328" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -290,7 +290,7 @@ EBDvo78
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6Rr-Cm-EQB">
-                                <rect key="frame" x="236" y="287" width="64" height="82"/>
+                                <rect key="frame" x="236" y="328" width="64" height="75"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <state key="normal">
                                     <string key="title" base64-UTF8="YES">
@@ -308,17 +308,50 @@ EBDvo78
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EOP-7P-tGt">
-                                <rect key="frame" x="177" y="419" width="123" height="21"/>
+                                <rect key="frame" x="177" y="439" width="123" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Are you ready?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JLk-s7-50Q">
-                                <rect key="frame" x="20" y="390" width="280" height="21"/>
+                                <rect key="frame" x="20" y="419" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="0.070000000000000007" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="myX-ss-C8o">
+                                <rect key="frame" x="157" y="20" width="143" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="2 cards"/>
+                                    <segment title="3 cards"/>
+                                </segments>
+                                <connections>
+                                    <action selector="modeChanged:" destination="2" eventType="valueChanged" id="gT4-H4-sGY"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6tm-aS-7XT">
+                                <rect key="frame" x="20" y="20" width="64" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Deal">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dealCards:" destination="2" eventType="touchUpInside" id="O5I-jJ-gZ4"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Mode:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="BRN-Lx-R1h">
+                                <rect key="frame" x="107" y="31" width="49" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -327,6 +360,7 @@ EBDvo78
                     <connections>
                         <outlet property="explanationLabel" destination="JLk-s7-50Q" id="GM3-CY-upH"/>
                         <outlet property="flipsLabel" destination="FbY-4M-otp" id="aAB-Q9-aNK"/>
+                        <outlet property="modeSelector" destination="myX-ss-C8o" id="bAu-c5-K4D"/>
                         <outlet property="scoreLabel" destination="EOP-7P-tGt" id="dkV-5g-Q0J"/>
                         <outletCollection property="cardButtons" destination="9T3-lo-wCY" id="4Am-So-4CY"/>
                         <outletCollection property="cardButtons" destination="x7B-2r-ZDg" id="IHz-aJ-B1u"/>
@@ -354,9 +388,12 @@ EBDvo78
         <class className="CardGameViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CardGameViewController.h"/>
             <relationships>
+                <relationship kind="action" name="dealCards:" candidateClass="UIButton"/>
                 <relationship kind="action" name="flipCard:" candidateClass="UIButton"/>
+                <relationship kind="action" name="modeChanged:" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="explanationLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="flipsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="modeSelector" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="scoreLabel" candidateClass="UILabel"/>
                 <relationship kind="outletCollection" name="cardButtons" candidateClass="UIButton"/>
             </relationships>
