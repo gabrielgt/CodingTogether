@@ -19,6 +19,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSelector;
 @property (strong, nonatomic) UIImage *cardBackImage;
+@property (strong, nonatomic) NSMutableArray *explanationHistoryArray;
+@property (weak, nonatomic) IBOutlet UISlider *explanationHistorySlider;
 @end
 
 @implementation CardGameViewController
@@ -80,10 +82,9 @@
         }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 
-    if (self.game.lastCardsPlayed)
-    {
-        self.explanationLabel.text = [self buildExplanationString];
-    }
+    [self.explanationHistoryArray addObject:[self buildExplanationString]];
+    [self.explanationHistorySlider setMaximumValue:self.explanationHistoryArray.count-1];
+    [self setExplanationHistorySliderValue:self.explanationHistorySlider.maximumValue];
 }
 
 - (NSString *)buildExplanationString
@@ -120,6 +121,9 @@
     self.game.gameMode = self.modeSelector.selectedSegmentIndex + 2;
     [self updateUI];
     self.modeSelector.enabled = YES;
+    self.explanationHistoryArray = nil;
+    self.explanationHistorySlider.value = 0;
+    self.explanationHistorySlider.maximumValue = 0;
 }
 
 - (IBAction)modeChanged:(UISegmentedControl *)sender
@@ -136,5 +140,37 @@
     return _cardBackImage;
 }
 
+- (IBAction)explanationHistoryChanged:(UISlider *)sender
+{
+    [self setExplanationHistorySliderValue:sender.value];
+}
+
+- (NSMutableArray *)explanationHistoryArray
+{
+    if (!_explanationHistoryArray)
+    {
+        _explanationHistoryArray = [[NSMutableArray alloc] init];
+        if (self.explanationLabel.text)
+            [_explanationHistoryArray addObject:self.explanationLabel.text];
+        else
+            [_explanationHistoryArray addObject:@"Are you ready?"];
+            
+    }
+    return _explanationHistoryArray;
+}
+
+- (void)setExplanationHistorySliderValue:(int)value
+{
+    self.explanationLabel.text = self.explanationHistoryArray[value];
+    self.explanationHistorySlider.value = value;
+    if (value < self.explanationHistoryArray.count - 1)
+    {
+        self.explanationLabel.alpha = 0.5;
+    }
+    else
+    {
+        self.explanationLabel.alpha = 1;
+    }
+}
 
 @end
