@@ -11,16 +11,18 @@
 #import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
+
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
-@property (nonatomic) int flipCount;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
-@property (strong, nonatomic) CardMatchingGame *game;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *explanationLabel;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *modeSelector;
+@property (weak, nonatomic) IBOutlet UISlider *explanationHistorySlider;
+
+@property (nonatomic) int flipCount;
+@property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) UIImage *cardBackImage;
 @property (strong, nonatomic) NSMutableArray *explanationHistoryArray;
-@property (weak, nonatomic) IBOutlet UISlider *explanationHistorySlider;
 @end
 
 @implementation CardGameViewController
@@ -33,13 +35,33 @@
     [self updateUI];
 }
 
+- (IBAction)dealCards:(UIButton *)sender
+{
+    self.game = nil;
+    self.game.gameMode = self.modeSelector.selectedSegmentIndex + 2;
+    [self updateUI];
+    self.modeSelector.enabled = YES;
+    self.explanationHistoryArray = nil;
+    self.explanationHistorySlider.value = 0;
+    self.explanationHistorySlider.maximumValue = 0;
+}
+
+- (IBAction)modeChanged:(UISegmentedControl *)sender
+{
+    self.game.gameMode = sender.selectedSegmentIndex + 2;
+}
+
+- (IBAction)explanationHistoryChanged:(UISlider *)sender
+{
+    [self setExplanationHistorySliderValue:sender.value];
+}
+
 - (void)setFlipCount:(int)flipCount
 {
     _flipCount = flipCount;
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
     NSLog(@"flips updated to %d", self.flipCount);
 }
-
 
 - (void)setCardButtons:(NSArray *)cardButtons
 {
@@ -115,22 +137,6 @@
     }
 }
 
-- (IBAction)dealCards:(UIButton *)sender
-{
-    self.game = nil;
-    self.game.gameMode = self.modeSelector.selectedSegmentIndex + 2;
-    [self updateUI];
-    self.modeSelector.enabled = YES;
-    self.explanationHistoryArray = nil;
-    self.explanationHistorySlider.value = 0;
-    self.explanationHistorySlider.maximumValue = 0;
-}
-
-- (IBAction)modeChanged:(UISegmentedControl *)sender
-{
-    self.game.gameMode = sender.selectedSegmentIndex + 2;
-}
-
 - (UIImage *)cardBackImage
 {
     if (!_cardBackImage)
@@ -138,11 +144,6 @@
         _cardBackImage = [UIImage imageNamed:@"cardback.png"];
     }
     return _cardBackImage;
-}
-
-- (IBAction)explanationHistoryChanged:(UISlider *)sender
-{
-    [self setExplanationHistorySliderValue:sender.value];
 }
 
 - (NSMutableArray *)explanationHistoryArray
