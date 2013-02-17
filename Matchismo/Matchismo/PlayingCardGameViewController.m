@@ -7,32 +7,26 @@
 //
 
 #import "PlayingCardGameViewController.h"
+#import "PlayingCardDeck.h"
+#import "CardMatchingGame.h"
+
 
 @interface PlayingCardGameViewController ()
-
+@property (strong, nonatomic) CardMatchingGame *game;
 @end
 
 @implementation PlayingCardGameViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+- (CardMatchingGame *)game
 {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
+    if (!_game)
+    {
+        _game = [[CardMatchingGame alloc] initWithCardCount:self.numberOfCards
+                                                  usingDeck:[[PlayingCardDeck alloc] init]];
     }
-    return self;
+    return _game;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-	// Do any additional setup after loading the view.
-}
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 @end
