@@ -7,7 +7,6 @@
 //
 
 #import "CardGameViewController.h"
-#import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
 
 @interface CardGameViewController ()
@@ -63,21 +62,13 @@
     NSLog(@"flips updated to %d", self.flipCount);
 }
 
+
 - (void)setCardButtons:(NSArray *)cardButtons
 {
     _cardButtons = cardButtons;
     [self updateUI];
 }
 
-- (CardMatchingGame *)game
-{
-    if (!_game)
-    {
-        _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
-                                                  usingDeck:[[PlayingCardDeck alloc] init]];
-    }
-    return _game;
-}
 
 - (void)updateUI
 {
@@ -172,6 +163,11 @@
     {
         self.explanationLabel.alpha = 1;
     }
+}
+
+- (NSUInteger) numberOfCards
+{
+    return self.cardButtons.count;
 }
 
 @end
