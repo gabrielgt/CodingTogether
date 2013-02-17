@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface CardGameViewController : UIViewController
-@property (nonatomic) NSUInteger numberOfCards;
 
 @end

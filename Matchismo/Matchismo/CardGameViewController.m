@@ -20,7 +20,7 @@
 
 @property (nonatomic) int flipCount;
 @property (strong, nonatomic) CardMatchingGame *game;
-@property (strong, nonatomic) UIImage *cardBackImage;
+
 @property (strong, nonatomic) NSMutableArray *explanationHistoryArray;
 @end
 
@@ -63,9 +63,8 @@
 }
 
 
-- (void)setCardButtons:(NSArray *)cardButtons
+- (void)viewDidLoad
 {
-    _cardButtons = cardButtons;
     [self updateUI];
 }
 
@@ -75,29 +74,21 @@
     for(UIButton *cardButton in self.cardButtons)
         {
             Card *card = [self.game cardAtIndex:[self.cardButtons indexOfObject:cardButton]];
-            [cardButton setTitle:card.contents
-                        forState:UIControlStateSelected];
-            [cardButton setTitle:card.contents
-                        forState:UIControlStateSelected|UIControlStateDisabled];
             cardButton.selected = card.isFaceUp;
             cardButton.enabled = !card.isUnplayable;
-            cardButton.alpha = card.isUnplayable ? 0.3 : 1.0;
-            
-            if (!cardButton.selected)
-            {
-                [cardButton setImage:self.cardBackImage forState:UIControlStateNormal];
-            }
-            else
-            {
-                [cardButton setImage:nil forState:UIControlStateNormal];
-            }
-            
         }
     self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
 
     [self.explanationHistoryArray addObject:[self buildExplanationString]];
     [self.explanationHistorySlider setMaximumValue:self.explanationHistoryArray.count-1];
     [self setExplanationHistorySliderValue:self.explanationHistorySlider.maximumValue];
+    
+    [self updateUISubClass];
+}
+
+- (void)updateUISubClass
+{
+    
 }
 
 - (NSString *)buildExplanationString
@@ -128,14 +119,7 @@
     }
 }
 
-- (UIImage *)cardBackImage
-{
-    if (!_cardBackImage)
-    {
-        _cardBackImage = [UIImage imageNamed:@"cardback.png"];
-    }
-    return _cardBackImage;
-}
+
 
 - (NSMutableArray *)explanationHistoryArray
 {
@@ -163,11 +147,6 @@
     {
         self.explanationLabel.alpha = 1;
     }
-}
-
-- (NSUInteger) numberOfCards
-{
-    return self.cardButtons.count;
 }
 
 @end

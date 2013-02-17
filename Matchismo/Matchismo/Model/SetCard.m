@@ -17,8 +17,17 @@
 
 - (NSString *)contents
 {
-    return [@"" stringByPaddingToLength:self.number
+    NSString *string = @"";
+    string = [string stringByPaddingToLength:self.number
                              withString:self.symbol startingAtIndex:0];
+    switch (self.shading)
+    {
+        case Open: string = [string stringByAppendingString:@"op"]; break;
+        case Striped: string = [string stringByAppendingString:@"st"]; break;
+        case Solid: string = [string stringByAppendingString:@"so"]; break;
+        default: string = [string stringByAppendingString:@"!!"]; break;
+    }
+    return string;
 }
 
 - (int)match:(NSArray *)otherCards
