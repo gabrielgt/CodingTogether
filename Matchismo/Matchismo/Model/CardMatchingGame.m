@@ -15,10 +15,10 @@
 
 @interface CardMatchingGame()
 @property (strong,nonatomic) NSMutableArray *cards;
-@property (nonatomic,readwrite) int score;
+@property (nonatomic,readwrite) NSInteger score;
 @property (nonatomic,readwrite) enum ActionType lastAction;
 @property (nonatomic, readwrite) NSMutableArray *lastCardsPlayed;
-@property (nonatomic, readwrite) int lastPartialScore;
+@property (nonatomic, readwrite) NSInteger lastPartialScore;
 @end
 
 @implementation CardMatchingGame
@@ -92,8 +92,8 @@
                 {
                     card.unplayable = YES;
                     self.lastPartialScore +=
-                        (matchScore * MATCH_BONUS) -
-                        (self.gameMode * MODE_PENALTY);
+                        (matchScore * self.matchBonus) -
+                        (self.gameMode * self.modePenalty);
                     self.lastAction = Matched;
                     for (Card *otherCard in otherCardsFlippedUp)
                     {
@@ -109,13 +109,13 @@
                         [self.lastCardsPlayed addObject:otherCard];
                     }
                     
-                    self.lastPartialScore -= MISMATCH_PENALTY +
-                        (self.gameMode * MODE_PENALTY);
+                    self.lastPartialScore -= self.mismatchPenalty +
+                        (self.gameMode * self.modePenalty);
                     self.lastAction = Missmatched;
                 }
             }
         
-            self.lastPartialScore -= FLIP_COST;
+            self.lastPartialScore -= self.flipCost;
         }
         self.score += self.lastPartialScore;
         card.faceUp = !card.isFaceUp;
@@ -129,6 +129,26 @@
         _lastCardsPlayed = [[NSMutableArray alloc] init];
     }
     return _lastCardsPlayed;
+}
+
+- (NSInteger) matchBonus
+{
+    return MATCH_BONUS;
+}
+
+- (NSInteger) mismatchPenalty
+{
+    return MISMATCH_PENALTY;
+}
+
+- (NSInteger) flipCost
+{
+    return FLIP_COST;
+}
+
+- (NSInteger) modePenalty
+{
+    return MODE_PENALTY;
 }
 
 @end

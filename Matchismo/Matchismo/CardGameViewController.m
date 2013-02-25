@@ -38,11 +38,18 @@
 {
     self.game = nil;
     self.game.gameMode = self.modeSelector.selectedSegmentIndex + 2;
-    [self updateUI];
     self.modeSelector.enabled = YES;
     self.explanationHistoryArray = nil;
     self.explanationHistorySlider.value = 0;
     self.explanationHistorySlider.maximumValue = 0;
+    
+    [self dealCardsSubClass];
+    [self updateUI];
+}
+
+- (void)dealCardsSubClass
+{
+    
 }
 
 - (IBAction)modeChanged:(UISegmentedControl *)sender
@@ -91,35 +98,59 @@
     
 }
 
-- (NSString *)buildExplanationString
+- (NSAttributedString *)buildExplanationString
 {
+    NSMutableAttributedString *attriString;
+    
+    NSString *stringPuntos;
+    
     switch (self.game.lastAction)
     {
         case None:
-            return @"Let's start again";
+            attriString = [[NSMutableAttributedString alloc] initWithString:@"Let's start again"];
             break;
         case FlippedDown:
-            return [NSString stringWithFormat:@"Flipped down %@",
-                    self.game.lastCardsPlayed.lastObject];
+            attriString = [[NSMutableAttributedString alloc] initWithString:@"Flipped down "];
+            [attriString appendAttributedString:
+                [self attributedDescriptionFromCard:self.game.lastCardsPlayed.lastObject]];
             break;
         case FlippedUp:
-            return [NSString stringWithFormat:@"Flipped up %@",
-                    self.game.lastCardsPlayed.lastObject];
+            attriString = [[NSMutableAttributedString alloc] initWithString:@"Flipped up "];
+            [attriString appendAttributedString:
+             [self attributedDescriptionFromCard:self.game.lastCardsPlayed.lastObject]];
             break;
         case Matched:
-            return [NSString stringWithFormat:@"Matched %@ for %d points",
-                    [self.game.lastCardsPlayed componentsJoinedByString:@" & "]
-                    , self.game.lastPartialScore];
+            attriString = [[NSMutableAttributedString alloc] initWithString:@"Matched "];
+            [attriString appendAttributedString:
+             [self attributedDescriptionFromCards:self.game.lastCardsPlayed]];
+            
+            stringPuntos = [NSString stringWithFormat:@" %d points", self.game.lastPartialScore];
+            [attriString appendAttributedString:[[NSAttributedString alloc] initWithString:stringPuntos]];
             break;
         case Missmatched:
-            return [NSString stringWithFormat:@"%@ don't match! %d point penalty!",
-                    [self.game.lastCardsPlayed componentsJoinedByString:@" & "],
-                    self.game.lastPartialScore];
+            attriString = [[NSMutableAttributedString alloc] init];
+            [attriString appendAttributedString:
+             [self attributedDescriptionFromCards:self.game.lastCardsPlayed]];
+            [attriString appendAttributedString:[[NSMutableAttributedString alloc] initWithString:@" don't match!"]];
+            
+            stringPuntos = [NSString stringWithFormat:@" %d points", self.game.lastPartialScore];
+            [attriString appendAttributedString:[[NSAttributedString alloc] initWithString:stringPuntos]];
             break;
     }
+    
+    NSRange range = NSMakeRange(0, attriString.length);
+    return [attriString attributedSubstringFromRange:range];
 }
 
+- (NSAttributedString *) attributedDescriptionFromCard: (Card *)card
+{
+    return [[NSAttributedString alloc] initWithString:card.description];
+}
 
+- (NSAttributedString *) attributedDescriptionFromCards: (NSArray *)cards
+{
+    return [[NSAttributedString alloc] initWithString:[cards componentsJoinedByString:@" & "]];
+}
 
 - (NSMutableArray *)explanationHistoryArray
 {
@@ -127,9 +158,10 @@
     {
         _explanationHistoryArray = [[NSMutableArray alloc] init];
         if (self.explanationLabel.text)
-            [_explanationHistoryArray addObject:self.explanationLabel.text];
+            [_explanationHistoryArray addObject:self.explanationLabel.attributedText];
         else
-            [_explanationHistoryArray addObject:@"Are you ready?"];
+            [_explanationHistoryArray addObject:
+             [[NSAttributedString alloc] initWithString:@"Are you ready?"]];
             
     }
     return _explanationHistoryArray;
@@ -137,7 +169,7 @@
 
 - (void)setExplanationHistorySliderValue:(int)value
 {
-    self.explanationLabel.text = self.explanationHistoryArray[value];
+    self.explanationLabel.attributedText = self.explanationHistoryArray[value];
     self.explanationHistorySlider.value = value;
     if (value < self.explanationHistoryArray.count - 1)
     {

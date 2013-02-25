@@ -8,7 +8,7 @@
 
 #import "PlayingCardGameViewController.h"
 #import "PlayingCardDeck.h"
-#import "CardMatchingGame.h"
+#import "PlayingCardMatchingGame.h"
 
 
 @interface PlayingCardGameViewController ()
@@ -23,8 +23,9 @@
 {
     if (!_game)
     {
-        _game = [[CardMatchingGame alloc] initWithCardCount:self.cardButtons.count
+        _game = [[PlayingCardMatchingGame alloc] initWithCardCount:self.cardButtons.count
                                                   usingDeck:[[PlayingCardDeck alloc] init]];
+        _game.gameMode = 2;
     }
     return _game;
 }
